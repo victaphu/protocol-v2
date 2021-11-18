@@ -3,6 +3,7 @@ import { HardhatNetworkForkingUserConfig, HardhatUserConfig } from 'hardhat/type
 import {
   eAvalancheNetwork,
   eEthereumNetwork,
+  eHarmonyNetwork,
   ePolygonNetwork,
   eXDaiNetwork,
   iParamsPerNetwork,
@@ -55,6 +56,9 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eXDaiNetwork.xdai]: 'https://rpc.xdaichain.com/',
   [eAvalancheNetwork.avalanche]: 'https://api.avax.network/ext/bc/C/rpc',
   [eAvalancheNetwork.fuji]: 'https://api.avax-test.network/ext/bc/C/rpc',
+  [eHarmonyNetwork.harmony]: 'https://api.s0.t.hmny.io/',
+  [eHarmonyNetwork.harmonyTest]: 'https://api.s0.b.hmny.io',
+
 };
 
 export const NETWORKS_DEFAULT_GAS: iParamsPerNetwork<number> = {
@@ -85,4 +89,6 @@ export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
   [eXDaiNetwork.xdai]: undefined,
   [eAvalancheNetwork.avalanche]: undefined,
   [eAvalancheNetwork.fuji]: undefined,
+  [eHarmonyNetwork.harmony]: undefined,
+  [eHarmonyNetwork.harmonyTest]: undefined,
 };
