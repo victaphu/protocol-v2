@@ -3,6 +3,7 @@ import {
   eAvalancheNetwork,
   eContractid,
   eEthereumNetwork,
+  eHarmonyNetwork,
   eNetwork,
   ePolygonNetwork,
 } from '../../helpers/types';
@@ -44,6 +45,10 @@ task(`deploy-${eContractid.UiPoolDataProvider}`, `Deploys the UiPoolDataProvider
       [eAvalancheNetwork.avalanche]: {
         incentivesController: '0x01D83Fe6A10D2f2B7AF17034343746188272cAc9',
         aaveOracle: '0xdC336Cd4769f4cC7E9d726DA53e6d3fC710cEB89',
+      },
+      [eHarmonyNetwork.harmonyTest]: {
+        incentivesController: '0x7c62593Ee4e6F27aC2d343f46484Fa7C8C27aBf9',
+        aaveOracle: '0x295aF05AA53e864E80AE1216fAA372B24fEefdE6',
       },
     };
     const supportedNetworks = Object.keys(addressesByNetwork);

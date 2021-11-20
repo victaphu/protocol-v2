@@ -81,39 +81,39 @@ export const CommonsConfig: ICommonConfiguration = {
   },
   ProviderRegistry: {
     [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmonyTest]: '0xCD3B71205D34d9c15B00aA0B12c2667a70D4679d',
   },
   ProviderRegistryOwner: {
     [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmonyTest]: '0x210C1507CC98638Cd99dE7b42EC674bad8C3Ca59',
   },
   LendingRateOracle: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x299351B26F2438f45330f0Fa2cB830932FB53426',
   },
   LendingPoolCollateralManager: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '',
   },
   LendingPoolConfigurator: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x590a6c1Ef6f42710DCE5ED1015A5F30301F15732',
   },
   LendingPool: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x00773337d57aAe9474bCC9A2D48294a8677E2a16',
   },
   WethGateway: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x044B2AA7FeC95a373DD8202CceD89B59c16Bf4F5',
   },
   TokenDistributor: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '',
   },
   AaveOracle: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '',
   },
   FallbackOracle: {
     [eHarmonyNetwork.harmony]: ZERO_ADDRESS,
@@ -136,7 +136,9 @@ export const CommonsConfig: ICommonConfiguration = {
       USDT: '0x7eb799851b98d26d9d37acfe4cea7aa5fe2a81f0',
       WBTC: '0x6c4387C4f570Aa8cAdcaFFc5E73ecb3D0F8Fc593',
       WONE: '0x7466d7d0C21Fa05F32F5a0Fa27e12bdC06348Ce2',
-      USD: '0xc285b03ffdb3fb5c77e3bdd0a2206a69a3691f0e',
+      USDC: '0xc285b03ffdb3fb5c77e3bdd0a2206a69a3691f0e',
+      AAVE: '0x5490eb132e3bbeb468ed4019b67aadb1fe437671',
+      DAI: "0xc27255d7805fc79e4616d5cd50d6f4464aea75a3"
     },
   },
   ReserveAssets: {
@@ -157,11 +159,11 @@ export const CommonsConfig: ICommonConfiguration = {
     [eHarmonyNetwork.harmonyTest]: '0x7466d7d0c21fa05f32f5a0fa27e12bdc06348ce2', // Official WONE
   },
   ReserveFactorTreasuryAddress: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined, // Self-controlled EOA for testing
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x210C1507CC98638Cd99dE7b42EC674bad8C3Ca59', // Self-controlled EOA for testing
   },
   IncentivesController: {
-    [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: undefined,
+    [eHarmonyNetwork.harmony]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x7c62593Ee4e6F27aC2d343f46484Fa7C8C27aBf9',
   },
 };

@@ -44,7 +44,7 @@
     "amm:kovan:full:migration:add-registry": "npm run compile && npm run hardhat:kovan -- amm:mainnet",
     "avalanche:fuji:full:migration:add-registry": "npm run compile && npm run hardhat:fuji avalanche:mainnet -- --pool Avalanche",
     "avalanche:mainnet:full:migration:add-registry": "npm run compile && npm run hardhat:avalanche avalanche:mainnet -- --pool Avalanche",
-    "harmony:testnet:full:migration:add-registry": "npm run compile && npm run hardhat:harmonyTest harmony:testnet -- --pool Harmony",
+    "harmony:testnet:full:migration:add-registry": "npm run compile && npm run hardhat:harmonyTest harmony:mainnet -- --pool Harmony",
     "harmony:mainnet:full:migration:add-registry": "npm run compile && npm run hardhat:harmony harmony:mainnet -- --pool Harmony",
     "aave:docker:add-market-to-registry-from-config": "npm run compile && npm run hardhat:docker -- add-market-to-registry --pool Aave",
     "aave:kovan:add-market-to-registry-from-config": "npm run compile && npm run hardhat:kovan -- add-market-to-registry --pool Aave",
