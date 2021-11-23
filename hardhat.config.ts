@@ -6,6 +6,7 @@ import { accounts } from './test-wallets.js';
 import {
   eAvalancheNetwork,
   eEthereumNetwork,
+  eHarmonyNetwork,
   eNetwork,
   ePolygonNetwork,
   eXDaiNetwork,
@@ -108,6 +109,8 @@ const buidlerConfig: HardhatUserConfig = {
     xdai: getCommonNetworkConfig(eXDaiNetwork.xdai, 100),
     avalanche: getCommonNetworkConfig(eAvalancheNetwork.avalanche, 43114),
     fuji: getCommonNetworkConfig(eAvalancheNetwork.fuji, 43113),
+    harmonyTest: getCommonNetworkConfig(eHarmonyNetwork.harmonyTest, 1666700000),
+    harmony: getCommonNetworkConfig(eHarmonyNetwork.harmony, 1666600000),
     hardhat: {
       hardfork: 'berlin',
       blockGasLimit: DEFAULT_BLOCK_GAS_LIMIT,

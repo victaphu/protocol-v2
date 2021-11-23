@@ -4,7 +4,7 @@ export interface SymbolMap<T> {
   [symbol: string]: T;
 }
 
-export type eNetwork = eEthereumNetwork | ePolygonNetwork | eXDaiNetwork | eAvalancheNetwork;
+export type eNetwork = eEthereumNetwork | ePolygonNetwork | eXDaiNetwork | eAvalancheNetwork | eHarmonyNetwork;
 
 export enum eEthereumNetwork {
   buidlerevm = 'buidlerevm',
@@ -28,6 +28,11 @@ export enum eXDaiNetwork {
 export enum eAvalancheNetwork {
   avalanche = 'avalanche',
   fuji = 'fuji',
+}
+
+export enum eHarmonyNetwork {
+  harmony = 'harmony',
+  harmonyTest = 'harmonyTest'
 }
 
 export enum EthereumNetworkNames {
@@ -252,6 +257,7 @@ export interface iAssetBase<T> {
   STAKE: T;
   xSUSHI: T;
   WAVAX: T;
+  WONE: T;
 }
 
 export type iAssetsWithoutETH<T> = Omit<iAssetBase<T>, 'ETH'>;
@@ -323,6 +329,11 @@ export type iAvalanchePoolAssets<T> = Pick<
   'WETH' | 'DAI' | 'USDT' | 'AAVE' | 'WBTC' | 'WAVAX' | 'USDC'
 >;
 
+export type iHarmonyPoolAssets<T> = Pick<
+  iAssetsWithoutUSD<T>,
+  'WETH' | 'DAI' | 'USDT' | 'AAVE' | 'WBTC' | 'WONE' | 'USDC'
+>;
+
 export type iMultiPoolsAssets<T> = iAssetCommon<T> | iAavePoolAssets<T>;
 
 export type iAavePoolTokens<T> = Omit<iAavePoolAssets<T>, 'ETH'>;
@@ -371,6 +382,7 @@ export enum TokenContractId {
   STAKE = 'STAKE',
   xSUSHI = 'xSUSHI',
   WAVAX = 'WAVAX',
+  WONE = 'WONE',
 }
 
 export interface IReserveParams extends IReserveBorrowParams, IReserveCollateralParams {
@@ -414,7 +426,8 @@ export type iParamsPerNetwork<T> =
   | iEthereumParamsPerNetwork<T>
   | iPolygonParamsPerNetwork<T>
   | iXDaiParamsPerNetwork<T>
-  | iAvalancheParamsPerNetwork<T>;
+  | iAvalancheParamsPerNetwork<T>
+  | iHarmonyParamsPerNetwork<T>;
 
 export interface iParamsPerNetworkAll<T>
   extends iEthereumParamsPerNetwork<T>,
@@ -443,6 +456,11 @@ export interface iXDaiParamsPerNetwork<T> {
 export interface iAvalancheParamsPerNetwork<T> {
   [eAvalancheNetwork.avalanche]: T;
   [eAvalancheNetwork.fuji]: T;
+}
+
+export interface iHarmonyParamsPerNetwork<T> {
+  [eHarmonyNetwork.harmonyTest]: T;
+  [eHarmonyNetwork.harmony]: T;
 }
 
 export interface iParamsPerPool<T> {
@@ -547,6 +565,10 @@ export interface IXDAIConfiguration extends ICommonConfiguration {
 
 export interface IAvalancheConfiguration extends ICommonConfiguration {
   ReservesConfig: iAvalanchePoolAssets<IReserveParams>;
+}
+
+export interface IHarmonyConfiguration extends ICommonConfiguration {
+  ReservesConfig: iHarmonyPoolAssets<IReserveParams>;
 }
 
 export interface ITokenAddress {

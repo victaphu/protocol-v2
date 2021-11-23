@@ -19,6 +19,8 @@ import {
   iXDaiParamsPerNetwork,
   iAvalancheParamsPerNetwork,
   eAvalancheNetwork,
+  eHarmonyNetwork,
+  iHarmonyParamsPerNetwork,
 } from './types';
 import { MintableERC20 } from '../types/MintableERC20';
 import { Artifact } from 'hardhat/types';
@@ -149,6 +151,7 @@ export const getParamPerNetwork = <T>(param: iParamsPerNetwork<T>, network: eNet
   const { matic, mumbai } = param as iPolygonParamsPerNetwork<T>;
   const { xdai } = param as iXDaiParamsPerNetwork<T>;
   const { avalanche, fuji } = param as iAvalancheParamsPerNetwork<T>;
+  const { harmony, harmonyTest} = param as iHarmonyParamsPerNetwork<T>;
   if (process.env.FORK) {
     return param[process.env.FORK as eNetwork] as T;
   }
@@ -178,6 +181,10 @@ export const getParamPerNetwork = <T>(param: iParamsPerNetwork<T>, network: eNet
       return avalanche;
     case eAvalancheNetwork.fuji:
       return fuji;
+    case eHarmonyNetwork.harmony:
+      return harmony;
+    case eHarmonyNetwork.harmonyTest:
+      return harmonyTest;
   }
 };
 
