@@ -1,12 +1,10 @@
-import { eAvalancheNetwork, eHarmonyNetwork, IHarmonyConfiguration } from '../../helpers/types';
+import { eHarmonyNetwork, IHarmonyConfiguration } from '../../helpers/types';
 
 import { CommonsConfig } from './commons';
 import {
   strategyWETH,
-  strategyDAI,
   strategyUSDC,
   strategyUSDT,
-  strategyAAVE,
   strategyWBTC,
   strategyWONE,
 } from './reservesConfigs';
@@ -21,10 +19,8 @@ export const HarmonyConfig: IHarmonyConfiguration = {
   ProviderId: 4,
   ReservesConfig: {
     WETH: strategyWETH,
-    DAI: strategyDAI,
     USDT: strategyUSDT,
     USDC: strategyUSDC,
-    AAVE: strategyAAVE,
     WBTC: strategyWBTC,
     WONE: strategyWONE,
   },
@@ -44,8 +40,8 @@ export const HarmonyConfig: IHarmonyConfiguration = {
       WBTC: '0x6c4387C4f570Aa8cAdcaFFc5E73ecb3D0F8Fc593',
       WONE: '0x7466d7d0C21Fa05F32F5a0Fa27e12bdC06348Ce2',
       USDC: '0xc285b03ffdb3fb5c77e3bdd0a2206a69a3691f0e',
-      AAVE: '0x5490eb132e3bbeb468ed4019b67aadb1fe437671',
-      DAI: "0xc27255d7805fc79e4616d5cd50d6f4464aea75a3"
+      // AAVE: '0x5490eb132e3bbeb468ed4019b67aadb1fe437671',
+      // DAI: "0xc27255d7805fc79e4616d5cd50d6f4464aea75a3"
     },
   },
 };

@@ -51,6 +51,8 @@ import {
   WETH9MockedFactory,
   WETHGatewayFactory,
   FlashLiquidationAdapterFactory,
+  UiIncentiveDataProviderFactory,
+  UiPoolDataProviderFactory,
 } from '../types';
 import {
   withSaveAndVerify,
@@ -69,18 +71,28 @@ import { LendingPoolLibraryAddresses } from '../types/LendingPoolFactory';
 import { UiPoolDataProvider } from '../types';
 import { eNetwork } from './types';
 
+export const deployUiIncentiveDataProvider = async (verify?: boolean) =>
+  withSaveAndVerify(
+    await new UiIncentiveDataProviderFactory(await getFirstSigner()).deploy(),
+    eContractid.UiIncentiveDataProvider,
+    [],
+    verify
+  );
+
 export const deployUiPoolDataProvider = async (
-  [incentivesController, aaveOracle]: [tEthereumAddress, tEthereumAddress],
+  chainlinkAggregatorProxy: string,
+  chainlinkEthUsdAggregatorProxy: string,
   verify?: boolean
-) => {
-  const id = eContractid.UiPoolDataProvider;
-  const args: string[] = [incentivesController, aaveOracle];
-  const instance = await deployContract<UiPoolDataProvider>(id, args);
-  if (verify) {
-    await verifyContract(id, instance, args);
-  }
-  return instance;
-};
+) =>
+  withSaveAndVerify(
+    await new UiPoolDataProviderFactory(await getFirstSigner()).deploy(
+      chainlinkAggregatorProxy,
+      chainlinkEthUsdAggregatorProxy
+    ),
+    eContractid.UiPoolDataProvider,
+    [chainlinkAggregatorProxy, chainlinkEthUsdAggregatorProxy],
+    verify
+  );
 
 const readArtifact = async (id: string) => {
   if (DRE.network.name === eEthereumNetwork.buidlerevm) {

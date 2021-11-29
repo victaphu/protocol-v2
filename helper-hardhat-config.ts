@@ -70,10 +70,12 @@ export const NETWORKS_DEFAULT_GAS: iParamsPerNetwork<number> = {
   [eEthereumNetwork.buidlerevm]: 65 * GWEI,
   [eEthereumNetwork.tenderly]: 1 * GWEI,
   [ePolygonNetwork.mumbai]: 1 * GWEI,
-  [ePolygonNetwork.matic]: 1 * GWEI,
+  [ePolygonNetwork.matic]: 30 * GWEI,
   [eXDaiNetwork.xdai]: 1 * GWEI,
   [eAvalancheNetwork.avalanche]: 225 * GWEI,
   [eAvalancheNetwork.fuji]: 85 * GWEI,
+  [eHarmonyNetwork.harmony]: 225 * GWEI,
+  [eHarmonyNetwork.harmonyTest]: 85 * GWEI,
 };
 
 export const BLOCK_TO_FORK: iParamsPerNetwork<number | undefined> = {
