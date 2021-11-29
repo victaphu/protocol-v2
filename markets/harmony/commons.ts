@@ -54,9 +54,9 @@ export const CommonsConfig: ICommonConfiguration = {
     USDT: {
       borrowRate: oneRay.multipliedBy(0.035).toFixed(),
     },
-    AAVE: {
-      borrowRate: oneRay.multipliedBy(0.03).toFixed(),
-    },
+    // AAVE: {
+    //   borrowRate: oneRay.multipliedBy(0.03).toFixed(),
+    // },
     WBTC: {
       borrowRate: oneRay.multipliedBy(0.03).toFixed(),
     },
@@ -81,31 +81,31 @@ export const CommonsConfig: ICommonConfiguration = {
   },
   ProviderRegistry: {
     [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: '0xCD3B71205D34d9c15B00aA0B12c2667a70D4679d',
+    [eHarmonyNetwork.harmonyTest]: undefined, //'0xCD3B71205D34d9c15B00aA0B12c2667a70D4679d',
   },
   ProviderRegistryOwner: {
     [eHarmonyNetwork.harmony]: undefined,
-    [eHarmonyNetwork.harmonyTest]: '0x210C1507CC98638Cd99dE7b42EC674bad8C3Ca59',
+    [eHarmonyNetwork.harmonyTest]: "0x210C1507CC98638Cd99dE7b42EC674bad8C3Ca59", //'0x210C1507CC98638Cd99dE7b42EC674bad8C3Ca59',
   },
   LendingRateOracle: {
     [eHarmonyNetwork.harmony]: '',
-    [eHarmonyNetwork.harmonyTest]: '0x299351B26F2438f45330f0Fa2cB830932FB53426',
+    [eHarmonyNetwork.harmonyTest]: '0x627208AC1642457E92bA78b08621b1C9E4447671'//'0x299351B26F2438f45330f0Fa2cB830932FB53426',
   },
   LendingPoolCollateralManager: {
     [eHarmonyNetwork.harmony]: '',
-    [eHarmonyNetwork.harmonyTest]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x0B79038A5ab8d63f822F67dec9c5b3d07239a870'//'0xc482773c0A9F2D4e935c50e861427aC6790152Ab',
   },
   LendingPoolConfigurator: {
     [eHarmonyNetwork.harmony]: '',
-    [eHarmonyNetwork.harmonyTest]: '0x590a6c1Ef6f42710DCE5ED1015A5F30301F15732',
+    [eHarmonyNetwork.harmonyTest]: '0xCCFD29682C4E777A0B64E33d106f29156EF05BB7'//'0x590a6c1Ef6f42710DCE5ED1015A5F30301F15732',
   },
   LendingPool: {
     [eHarmonyNetwork.harmony]: '',
-    [eHarmonyNetwork.harmonyTest]: '0x00773337d57aAe9474bCC9A2D48294a8677E2a16',
+    [eHarmonyNetwork.harmonyTest]: '0x05f92877E2761aFCE684b901B98f88b3aE6d2293'//'0x00773337d57aAe9474bCC9A2D48294a8677E2a16',
   },
   WethGateway: {
     [eHarmonyNetwork.harmony]: '',
-    [eHarmonyNetwork.harmonyTest]: '0x044B2AA7FeC95a373DD8202CceD89B59c16Bf4F5',
+    [eHarmonyNetwork.harmonyTest]: '0x105EF3580D3Ea60841F81185BBA6501c59fe82cF'//'0x044B2AA7FeC95a373DD8202CceD89B59c16Bf4F5',
   },
   TokenDistributor: {
     [eHarmonyNetwork.harmony]: '',
@@ -113,7 +113,7 @@ export const CommonsConfig: ICommonConfiguration = {
   },
   AaveOracle: {
     [eHarmonyNetwork.harmony]: '',
-    [eHarmonyNetwork.harmonyTest]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x1368F83468AAbE93265FBe4231d4572da5911AF6'//'0x7b2dd1c9991C09EC92619659beFeb8D2F784530E',
   },
   FallbackOracle: {
     [eHarmonyNetwork.harmony]: ZERO_ADDRESS,
@@ -122,23 +122,21 @@ export const CommonsConfig: ICommonConfiguration = {
   ChainlinkAggregator: {
     // https://github.com/VenomProtocol/venomswap-default-token-list/blob/main/src/tokens/harmony-mainnet.json
     [eHarmonyNetwork.harmony]: { // not yet deployed on main-net
-      WETH: '0x6983D1E6DEf3690C4d616b13597A09e6193EA013',
-      DAI: '0xEf977d2f931C1978Db5F6747666fa1eACB0d0339',
-      USDC: '0x985458E523dB3d53125813eD68c274899e9DfAb4',
-      USDT: '0x3C2B8Be99c50593081EAA2A724F0B8285F5aba8f',
-      AAVE: '0xcF323Aad9E522B93F11c352CaA519Ad0E14eB40F',
-      WBTC: '0x3095c7557bCb296ccc6e363DE01b760bA031F2d9',
-      WONE: '0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a',
+      WETH: '',
+      DAI: '',
+      USDC: '',
+      USDT: '',
+      AAVE: '',
+      WBTC: '',
+      WONE: '',
     },
     // https://github.com/VenomProtocol/venomswap-default-token-list/blob/main/src/tokens/harmony-testnet.json
     [eHarmonyNetwork.harmonyTest]: { // https://docs.chain.link/docs/harmony-price-feeds/
-      WETH: '0x1E120B3b4aF96e7F394ECAF84375b1C661830013',
-      USDT: '0x7eb799851b98d26d9d37acfe4cea7aa5fe2a81f0',
-      WBTC: '0x6c4387C4f570Aa8cAdcaFFc5E73ecb3D0F8Fc593',
-      WONE: '0x7466d7d0C21Fa05F32F5a0Fa27e12bdC06348Ce2',
-      USDC: '0xc285b03ffdb3fb5c77e3bdd0a2206a69a3691f0e',
-      AAVE: '0x5490eb132e3bbeb468ed4019b67aadb1fe437671',
-      DAI: "0xc27255d7805fc79e4616d5cd50d6f4464aea75a3"
+      WETH: '0x4f11696cE92D78165E1F8A9a4192444087a45b64',
+      USDT: '0x9A37E1abFC430B9f5E204CA9294809c1AF37F697',
+      WBTC: '0xEF637736B220a58C661bfF4b71e03ca898DCC0Bd',
+      WONE: '0xcEe686F89bc0dABAd95AEAAC980aE1d97A075FAD',
+      USDC: '0x6F2bD4158F771E120d3692C45Eb482C16f067dec',
     },
   },
   ReserveAssets: {
@@ -152,7 +150,7 @@ export const CommonsConfig: ICommonConfiguration = {
   },
   WETH: {
     [eHarmonyNetwork.harmony]: '',
-    [eHarmonyNetwork.harmonyTest]: '',
+    [eHarmonyNetwork.harmonyTest]: '0x1E120B3b4aF96e7F394ECAF84375b1C661830013',
   },
   WrappedNativeToken: {
     [eHarmonyNetwork.harmony]: '0xcf664087a5bb0237a0bad6742852ec6c8d69a27a', // Official WONE
@@ -164,6 +162,6 @@ export const CommonsConfig: ICommonConfiguration = {
   },
   IncentivesController: {
     [eHarmonyNetwork.harmony]: '',
-    [eHarmonyNetwork.harmonyTest]: '0x7c62593Ee4e6F27aC2d343f46484Fa7C8C27aBf9',
+    [eHarmonyNetwork.harmonyTest]: '0x0a51F37d86698cC5E39D8F823307992A5154bCF0',
   },
 };

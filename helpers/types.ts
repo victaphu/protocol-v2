@@ -331,7 +331,7 @@ export type iAvalanchePoolAssets<T> = Pick<
 
 export type iHarmonyPoolAssets<T> = Pick<
   iAssetsWithoutUSD<T>,
-  'WETH' | 'DAI' | 'USDT' | 'AAVE' | 'WBTC' | 'WONE' | 'USDC'
+  'WETH' | 'USDT' | 'WBTC' | 'WONE' | 'USDC'
 >;
 
 export type iMultiPoolsAssets<T> = iAssetCommon<T> | iAavePoolAssets<T>;
